@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "OilPrice": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5281;https://localhost:7281",
+      "dotnetRunMessages": true
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "DockerfileRunArguments": "-p 6001:6001",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  }
+}

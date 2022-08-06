@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>39a770a8-2de8-4cd4-b3c4-b138953e8280</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileRunArguments>-p 6001:6001</DockerfileRunArguments>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.16.1" />
+    <PackageReference Include="StreamJsonRpc" Version="2.11.35" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OilPricesContract\OilPricesContract.csproj" />
+  </ItemGroup>
+
+</Project>
