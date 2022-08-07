@@ -4,6 +4,6 @@ namespace OilPricesContract
 {
     public interface IOilPrices
     {
-        Task<OilPricesReply> GetOilPricesAsync(OilPricesRequest request);
+        Task<OilPricesReply> GetOilPriceTrend(OilPricesRequest request);
     }
 }

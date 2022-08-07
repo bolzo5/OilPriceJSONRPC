@@ -5,10 +5,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-Console.WriteLine("Hello, World!");
+//local config
 TcpClient tcpClient = new ("localhost", 6000);
+//docker config
 //TcpClient tcpClient = new(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 6001));
-
  //tcpClient.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 6001));
 
 Stream jsonRpcStream = tcpClient.GetStream();
@@ -16,15 +16,16 @@ IJsonRpcMessageFormatter jsonRpcMessageFormatter = new JsonMessageFormatter(Enco
 IJsonRpcMessageHandler jsonRpcMessageHandler = new LengthHeaderMessageHandler(jsonRpcStream, jsonRpcStream, jsonRpcMessageFormatter);
 
 IOilPrices jsonRpcOilPricesClient = JsonRpc.Attach<IOilPrices>(jsonRpcMessageHandler);
-OilPricesRequest req = new OilPricesRequest
+OilPricesRequest req = new ()
 {
-    StartDate = DateTime.Today,
-    EndDate = DateTime.UtcNow,
+    startDateISO8601 = "2018-02-15",
+    endDateISO8601 = "2018-02-25",
 };
 
-OilPricesReply OilPricesReply = await jsonRpcOilPricesClient.GetOilPricesAsync(req);
+Console.WriteLine(req.startDateISO8601.ToString() + " " + req.endDateISO8601.ToString());
+OilPricesReply OilPricesReply = await jsonRpcOilPricesClient.GetOilPriceTrend(req);
 
-foreach(OilPriceAtDate oilPriceAtDate in OilPricesReply.Prices)
+foreach(OilPriceAtDateReply oilPriceAtDate in OilPricesReply.Prices)
 {
     Console.WriteLine(oilPriceAtDate.Date.ToString()+" "+oilPriceAtDate.Price.ToString());
 }

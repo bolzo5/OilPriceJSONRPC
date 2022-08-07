@@ -2,7 +2,7 @@
 {
     public class OilPricesRequest
     {
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string startDateISO8601 { get; set; }
+        public string endDateISO8601 { get; set; }
     }
 }

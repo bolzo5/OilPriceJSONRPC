@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OilPricesClient", "OilPrice
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OilPricesTest", "OilPricesTest\OilPricesTest.csproj", "{0F5B6789-D839-4F37-97C8-8AD52087FF92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilPricesContract", "OilPricesContract\OilPricesContract.csproj", "{2CA6702E-28B3-4F16-8EBC-5D4FDF44A4A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OilPricesContract", "OilPricesContract\OilPricesContract.csproj", "{2CA6702E-28B3-4F16-8EBC-5D4FDF44A4A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

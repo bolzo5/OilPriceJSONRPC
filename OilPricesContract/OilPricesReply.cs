@@ -2,13 +2,12 @@
 {
     public class OilPricesReply
     {
-        public List<OilPriceAtDate> Prices { get; set; } = new List<OilPriceAtDate>();
+        public List<OilPriceAtDateReply> Prices { get; set; } = new List<OilPriceAtDateReply>();
     }
-    public class OilPriceAtDate
+    public class OilPriceAtDateReply
     {
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public double Price { get; set; }
-
 
     }
 }
